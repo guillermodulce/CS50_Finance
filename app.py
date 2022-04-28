@@ -1,4 +1,5 @@
 import os
+import re
 
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
@@ -189,6 +190,14 @@ def register():
 
         if password != confirmation:
             return apology('Passwords do not match!')
+        
+        
+        if len(password) < 8:
+            return apology("Make sure your password is at lest 8 letters")
+        elif re.search('[0-9]',  password) is None:
+            return apology("Make sure your password has a number in it")
+        elif re.search('[A-Z]', password) is None:
+            return apology("Make sure your password has a capital letter in it")
 
         hash = generate_password_hash(password)
 
