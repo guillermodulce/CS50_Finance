@@ -28,8 +28,7 @@ Session(app)
 uri = os.getenv("DATABASE_URL")
 if uri.startswith("postgres://"):
     uri = uri.replace("postgres://", "postgresql://")
-db = SQL(postgres://rvqgznsotgclox:3b75b89b3ee6dd77c82b1cbb22ab9377c6f9dea75ac93c65694ffc17373050c9@ec2-3-211-6-217.compute-1.amazonaws.com:5432/d28j140srgdvdg
-)
+db = SQL(postgres://oxavxupvaqmuso:b3df5be37ba71cec835e50a8b317561b2b8e8b431ce190393a1d176757da54df@ec2-23-23-151-191.compute-1.amazonaws.com:5432/d34rj5npnrgkqm)
 
 # Make sure API key is set
 if not os.environ.get("API_KEY"):
